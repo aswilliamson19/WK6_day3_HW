@@ -32,9 +32,11 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
   const transports = this.journeys.map(journey => journey.transport);
-  return unique = transports.filter((transport, index, ar) => ar.indexOf(transport) === index);
-};
+  // return unique = transports.filter((transport, index, ar) => ar.indexOf(transport) === index);
+// };
 
-// Could also use new Set to get the unique values
+// Could also use new Set to get the unique values and then the spread operator puts the unique values rom the st into a new array (it's the [...uniqueTransports]).
+const uniqueTransports = new Set(transports); return [...uniqueTransports];
+};
 
 module.exports = Traveller;
