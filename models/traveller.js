@@ -31,10 +31,10 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
-  let transports = this.journeys.map(journey => journey.transport);
-  let unique = transports.filter((item, i, ar) => ar.indexOf(item) === i);
-  return unique;
+  const transports = this.journeys.map(journey => journey.transport);
+  return unique = transports.filter((transport, index, ar) => ar.indexOf(transport) === index);
 };
 
+// Could also use new Set to get the unique values
 
 module.exports = Traveller;
